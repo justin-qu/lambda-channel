@@ -1,0 +1,17 @@
+[package]
+name = "lambda-channel"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.61"
+license = "MPL-2.0"
+repository = "https://github.com/justin-qu/lambda-channel"
+homepage = "https://github.com/justin-qu/lambda-channel"
+description = "A crossbeam-like channel concurrently executes lambda functions."
+keywords = ["lock-free", "thread", "executor", "pipeline"]
+categories = ["concurrency"]
+exclude = ["/.*"]
+
+[dependencies]
+crossbeam-channel = "0.5.15"
+genzero = "0.2.0"
+quanta = "0.12.6"
