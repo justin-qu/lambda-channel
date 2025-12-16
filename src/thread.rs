@@ -245,7 +245,7 @@ fn spawn_primary_lambda_thread<T: Send + 'static, U: Send + 'static, V: Clone + 
                     let execution_count = execution_metrics.get_and_reset_execution_count();
                     let average_execution_duration_ns = execution_metrics.get_and_reset_total_execution_time_ns() / execution_count;
                     metrics_tx.send(Metrics{
-                        active_threads: threads.len(),
+                        active_threads: threads.len() + 1,
                         input_channel_len: input_channel.len(),
                         input_channel_capacity,
                         output_channel_len: output_channel.len(),
@@ -328,7 +328,7 @@ fn spawn_primary_lambda_thread<T: Send + 'static, U: Send + 'static, V: Clone + 
                                 let execution_count = execution_metrics.get_and_reset_execution_count();
                                 let average_execution_duration_ns = execution_metrics.get_and_reset_total_execution_time_ns() / execution_count;
                                 metrics_tx.send(Metrics{
-                                    active_threads: threads.len(),
+                                    active_threads: threads.len() + 1,
                                     input_channel_len: input_channel.len(),
                                     input_channel_capacity,
                                     output_channel_len: output_channel.len(),
@@ -509,7 +509,7 @@ fn spawn_primary_sink_thread<T: Send + 'static, V: Clone + Send + 'static>(
                     let execution_count = execution_metrics.get_and_reset_execution_count();
                     let average_execution_duration_ns = execution_metrics.get_and_reset_total_execution_time_ns() / execution_count;
                     metrics_tx.send(Metrics{
-                        active_threads: threads.len(),
+                        active_threads: threads.len() + 1,
                         input_channel_len: input_channel.len(),
                         input_channel_capacity,
                         output_channel_len: 0,
