@@ -1,5 +1,5 @@
 # lambda-channel
-A crossbeam-like channel concurrently executes lambda functions.
+A crossbeam-like channel that concurrently executes a provided function.
 
 ## Usage
 
@@ -18,3 +18,4 @@ lambda-channel = "0.1"
 
 ## Examples
 
+See [examples](./examples/channel_example.rs)
